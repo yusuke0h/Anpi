@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20141210054139) do
     t.datetime "updated_at"
   end
 
-  create_table "bundle_mails", force: true do |t|
-    t.string   "title",       null: false
-    t.text     "body"
-    t.integer  "disaster_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "confirmations", force: true do |t|
     t.string   "locate"
     t.text     "locate_desc"
