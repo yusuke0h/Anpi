@@ -11,11 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210011221) do
+ActiveRecord::Schema.define(version: 20141210054139) do
 
   create_table "books", force: true do |t|
     t.string   "title"
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bundle_mails", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "body"
+    t.integer  "disaster_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "confirmations", force: true do |t|
+    t.string   "locate"
+    t.text     "locate_desc"
+    t.string   "safely"
+    t.text     "safely_desc"
+    t.boolean  "contacted",   default: false, null: false
+    t.integer  "disaster_id",                 null: false
+    t.integer  "user_id",                     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "disasters", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.string   "tel"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

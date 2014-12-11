@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  comment: MyText
+  body: MyText
+  disaster_id: 1
 
 two:
   title: MyString
-  comment: MyText
+  body: MyText
+  disaster_id: 1

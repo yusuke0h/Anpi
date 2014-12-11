@@ -30,10 +30,13 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'therubyracer',  platforms: :ruby
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+gem 'bootstrap-material-design'
 
 gem 'better_errors'
 gem 'binding_of_caller'
+
+gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
