@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
 
-  <%= f.button :submit, class: 'btn btn-primary btn-raised' %>
+  <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                disasters_path, :class => 'btn btn-default btn-raised' %>
+                disasters_path, :class => 'btn btn-default' %>
 <% end %>
