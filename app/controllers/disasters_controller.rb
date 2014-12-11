@@ -10,7 +10,7 @@ class DisastersController < ApplicationController
   def create
     @disaster = Disaster.new disaster_params
     if @disaster.save
-      redirect_to disasters_path
+      redirect_to disasters
     else
       render :new
     end
