@@ -8,6 +8,12 @@ class DisastersController < ApplicationController
   end
 
   def create
+    @disaster = Disaster.new disaster_params
+    if @disaster.save
+      redirect_to disasters_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,4 +24,11 @@ class DisastersController < ApplicationController
 
   def delete
   end
+
+private
+
+  def disaster_params
+    params.require(:disaster).permit(:name, :description)
+  end
+
 end
