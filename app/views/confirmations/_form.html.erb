@@ -1,0 +1,13 @@
+<%= simple_form_for @confirmation, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :locate %>
+  <%= f.input :locate_desc %>
+  <%= f.input :safely %>
+  <%= f.input :safely_desc %>
+  <%= f.input :contacted %>
+  <%= f.input :disaster_id %>
+  <%= f.input :user_id %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                confirmations_path, :class => 'btn btn-default' %>
+<% end %>
