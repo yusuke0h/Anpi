@@ -31,6 +31,11 @@ class DisastersController < ApplicationController
     respond_to do |format|
       if @disaster.save
         Confirmation.auto_create(@disaster.id)
+        User.all.each do |user|
+          mail = UserMailer.send_mail user
+          mail.transport_encoding = '8bit'
+          mail.deliver
+        end
         format.html { redirect_to @disaster, notice: 'メールを送信しました' }
         format.json { render :show, status: :created, location: @disaster }
       else
