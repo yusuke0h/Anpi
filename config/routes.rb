@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get 'confirmations/edit'
-  post 'confirmations/update'
-
   resources :users
 
   resources :disasters do
     get 'confirmations/index_for_admin'
     get 'confirmations/index_for_user'
+    get 'confirmations/edit'
+    put 'confirmations/update'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

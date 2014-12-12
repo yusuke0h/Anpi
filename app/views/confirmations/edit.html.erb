@@ -1,5 +1,21 @@
 <%- model_class = Confirmation -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
-<%= render :partial => 'form' %>
+
+<% unless @confirmation.contacted %>
+  <div class="page-header">
+    <h1><%= @user.name %> さん 安否確認を登録してください．</h1>
+  </div>
+
+  <%= simple_form_for @confirmation, url: disaster_confirmations_update_path(@disaster, user_id: @encrypt_user_id), :html => { :class => 'form-horizontal' }, method: :put do |f| %>
+    <%= f.input :locate, collection: ['自宅', '会社', 'その他'], as: :select, include_blank: false  %>
+    <%= f.input :locate_desc %>
+    <%= f.input :safely, collection: ['無事', '怪我あり'], as: :select, include_blank: false  %>
+    <%= f.input :safely_desc %>
+    <%= f.input :contacted, as: :hidden, input_html: { value: true }  %>
+
+    <%= f.button :submit, :class => 'btn-primary', value: '完了' %>
+  <% end %>
+
+<% else %>
+<h2>登録ありがとうございました</h2>
+<% end %>
+
