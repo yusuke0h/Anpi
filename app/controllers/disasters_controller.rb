@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class DisastersController < ApplicationController
   before_action :set_disaster, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +30,8 @@ class DisastersController < ApplicationController
 
     respond_to do |format|
       if @disaster.save
-        format.html { redirect_to @disaster, notice: 'Disaster was successfully created.' }
+        Confirmation.auto_create(@disaster.id)
+        format.html { redirect_to @disaster, notice: 'メールを送信しました' }
         format.json { render :show, status: :created, location: @disaster }
       else
         format.html { render :new }

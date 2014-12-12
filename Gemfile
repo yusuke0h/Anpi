@@ -42,6 +42,14 @@ gem 'bootstrap-material-design'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem "letter_opener"
+end
+
 gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
 
 # Use ActiveModel has_secure_password
