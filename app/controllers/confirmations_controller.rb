@@ -5,6 +5,8 @@ class ConfirmationsController < ApplicationController
   end
 
   def index_for_user
+    @disaster = disaster
+    @confirmations = disaster.confirmations
   end
 
   def edit
