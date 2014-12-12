@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
   get 'confirmations/index_for_admin'
-
   get 'confirmations/index_for_user'
-
   get 'confirmations/auto_create'
-
   get 'confirmations/edit'
-
-  get 'confirmations/update'
+  post 'confirmations/update'
 
   resources :users
 
