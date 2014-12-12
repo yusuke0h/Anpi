@@ -1,2 +1,37 @@
-<h1>Confirmations#index_for_admin</h1>
-<p>Find me in app/views/confirmations/index_for_admin.html.erb</p>
+<h1>管理者用安否情報確認</h1>
+
+<%- model_class = Confirmation -%>
+<div class="page-header">
+  <h1>災害一覧</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:contacted) %></th>
+      <th><%= model_class.human_attribute_name(:locate) %></th>
+      <th><%= model_class.human_attribute_name(:locate_desc) %></th>
+      <th><%= model_class.human_attribute_name(:safely) %></th>
+      <th><%= model_class.human_attribute_name(:safely_desc) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:updated_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @confirmations.each do |confirmation| %>
+      <tr>
+        <td><%= confirmation.contacted %></td>
+        <td><%= confirmation.locate %></td>
+        <td><%= confirmation.locate_desc %></td>
+        <td><%= confirmation.safely %></td>
+        <td><%= confirmation.safely_desc %></td>
+        <td><%= confirmation.created_at %></td>
+        <td><%= confirmation.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            disasters_path,
+            :class => 'btn btn-default' %>

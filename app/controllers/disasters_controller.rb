@@ -6,7 +6,7 @@ class DisastersController < ApplicationController
   # GET /disasters
   # GET /disasters.json
   def index
-    @disasters = Disaster.all
+    @disasters = Disaster.all.page params[:page]
   end
 
   # GET /disasters/1
