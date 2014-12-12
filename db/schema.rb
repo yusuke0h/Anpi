@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141210054139) do
 
-  create_table "books", force: true do |t|
-    t.string   "title"
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "confirmations", force: true do |t|
     t.string   "locate"
     t.text     "locate_desc"

@@ -34,7 +34,8 @@ gem 'spring',        group: :development
 
 
 gem 'simple_form'
-gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer', '= 0.10.2', platforms: :ruby
+gem 'libv8', '= 3.3.10.4'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'bootstrap-material-design'
