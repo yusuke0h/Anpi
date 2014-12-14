@@ -1,0 +1,9 @@
+# database.yml
+# developmentとproductionで環境を分けて書いておくとよい？
+db:
+  adapter: mysql2
+  encoding: utf8
+  host: 153.121.33.196
+  database: anpi
+  username: takefive
+  password: 2014inbDtaIke88five5
