@@ -16,6 +16,20 @@
   <% end %>
 
 <% else %>
-<h2>登録ありがとうございました</h2>
+<h1>登録ありがとうございました</h1>
+<h2>登録内容</h2>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:locate) %>:</strong></dt>
+  <dd><%= @confirmation.locate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:locate_desc) %>:</strong></dt>
+  <dd><%= @confirmation.locate_desc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:safely) %>:</strong></dt>
+  <dd><%= @confirmation.safely %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:safely_desc) %>:</strong></dt>
+  <dd><%= @confirmation.safely_desc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contacted) %>:</strong></dt>
+  <dd><%= @confirmation.contacted %></dd>
+</dl>
+
 <% end %>
 

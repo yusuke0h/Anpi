@@ -43,6 +43,8 @@ gem 'bootstrap-material-design'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'kaminari'
+gem 'whenever', :require => false
+gem 'mysql2'
 
 group :development do
   gem 'pry'

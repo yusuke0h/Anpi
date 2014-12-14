@@ -16,3 +16,5 @@
 /tmp
 
 /vendor/bundler
+
+/config/outside_database.yml
