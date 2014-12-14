@@ -21,6 +21,9 @@ class UserMailer < ActionMailer::Base
     @user = user
     @conf_edit_url = conf_edit_url
     @user_conf_url = user_conf_url
-    mail to: user.email, subject: '災害が発生しました.安否登録をしてください'
+    # 本番用
+    # mail to: user.email, subject: '災害が発生しました.安否登録をしてください'
+    # メール飛ぶと厄介なのでテストように全部同じとこに飛ぶようにする
+    mail to: "take.five.mikaka@gmail.com", subject: '災害が発生しました.安否登録をしてください'
   end
 end
