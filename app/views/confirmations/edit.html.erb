@@ -2,7 +2,7 @@
 
 <% unless @confirmation.contacted %>
   <div class="page-header">
-    <h1><%= @user.name %> さん 安否確認を登録してください．</h1>
+    <h1><%= @user.name %> さん 安否情報を登録してください．</h1>
   </div>
 
   <%= simple_form_for @confirmation, url: disaster_confirmations_update_path(@disaster, user_id: @encrypt_user_id), :html => { :class => 'form-horizontal' }, method: :put do |f| %>
