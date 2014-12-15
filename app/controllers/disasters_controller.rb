@@ -10,6 +10,16 @@ class DisastersController < ApplicationController
     @disasters = Disaster.all.page params[:page]
   end
 
+  def api_check
+    Disaster.api_check
+    redirect_to disasters_path, notice: 'APIを確認しました'
+  end
+
+  def reminder_mail
+    Disaster.atuo_send_mail_to_unanswered_users
+    redirect_to disasters_path, notice: '未返信者へメールを送信しました'
+  end
+
   # GET /disasters/1
   # GET /disasters/1.json
   def show

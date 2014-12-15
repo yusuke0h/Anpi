@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get 'disasters/api_check'
+  get 'disasters/reminder_mail'
   resources :disasters do
     get 'confirmations/index_for_admin'
     get 'confirmations/index_for_user'
