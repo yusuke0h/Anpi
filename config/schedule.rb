@@ -18,3 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.hours do
+  runner "Disaster.atuo_send_mail_to_unanswered_users"
+end
