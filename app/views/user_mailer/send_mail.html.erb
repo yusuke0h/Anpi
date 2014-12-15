@@ -6,7 +6,7 @@
 
 <p>また社員の安否登録状況一覧を確認するためのユーザIDとパスワード, URLは</p>
 <ul>
-<li>ID : users</li>
-<li>Pass: xxxx</li>
+<li>ID : user </li>
+<li>Pass: <%= (Random.new(Disaster.last.id).rand * 10000000).truncate.to_s %></li>
 <li><%= link_to @user_conf_url, @user_conf_url %></li>
 </ul>

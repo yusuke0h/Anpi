@@ -2,7 +2,7 @@
 
 class ConfirmationsController < ApplicationController
   http_basic_authenticate_with name: 'admin', password: 'hogehoge', only: [:index_for_admin]
-  http_basic_authenticate_with name: 'user', password: 'hogehoge', only: [:index_for_user]
+  before_filter :basic, only: [:index_for_user]
 
   def index_for_admin
     @disaster = disaster
@@ -42,6 +42,12 @@ class ConfirmationsController < ApplicationController
 
   def confirmation_params
     params.require(:confirmation).permit(:locate, :locate_desc, :safely, :safely_desc, :contacted)
+  end
+
+  def basic
+    authenticate_or_request_with_http_basic do |user, pass|
+      user == 'user' && pass == (Random.new(Disaster.last.id).rand * 10000000).truncate.to_s
+    end
   end
 
 end
