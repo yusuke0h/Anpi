@@ -31,6 +31,7 @@ class DisastersController < ApplicationController
 
     respond_to do |format|
       if @disaster.save
+        User.outside_update
         Confirmation.auto_create(@disaster.id)
         @disaster.send_mail_to_unanswered_users
         format.html { redirect_to @disaster, notice: 'メールを送信しました' }
