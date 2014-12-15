@@ -1,15 +1,13 @@
-<h1>社員用安否情報確認</h1>
-
 <%- model_class = Confirmation -%>
 <div class="page-header">
-  <h1>社員一覧</h1>
+  <h1>安否情報一覧</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:contacted) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= model_class.human_attribute_name(:updated_at) %></th>
+      <th>安否情報登録有無</th>
+      <th>初期登録日時</th>
+      <th>最新登録日時</th>
     </tr>
   </thead>
   <tbody>

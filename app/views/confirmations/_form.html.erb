@@ -1,8 +1,8 @@
 <%= simple_form_for disaster_confirmations_update_path(@disaster), :html => { :class => 'form-horizontal' }, method: :put do |f| %>
-  <%= f.input :locate, collection: ['自宅', '会社', 'その他'], as: :select, include_blank: false  %>
-  <%= f.input :locate_desc %>
-  <%= f.input :safely, collection: ['無事', '怪我あり'], as: :select, include_blank: false  %>
-  <%= f.input :safely_desc %>
+  <%= f.input :locate, collection: ['自宅', '会社', 'その他'], as: :select, include_blank: false, label:"場所"  %>
+  <%= f.input :locate_desc, label:"場所-備考" %>
+  <%= f.input :safely, collection: ['無事', '怪我あり'], as: :select, include_blank: false, label:"安否"  %>
+  <%= f.input :safely_desc, label:"安否-備考" %>
 
   <%= f.button :submit, :class => 'btn-primary', value: '完了' %>
 <% end %>

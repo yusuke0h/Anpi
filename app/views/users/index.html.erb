@@ -6,11 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:tel) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+      <th>電話番号</th>
+      <th>データ作成日時</th>
     </tr>
   </thead>
   <tbody>
@@ -20,16 +19,18 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.tel %></td>
-        <td><%=l user.created_at %></td>
+        <td><%= user.created_at %></td>
+<!--
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to "編集",
                       edit_user_path(user), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to "削除",
                       user_path(user),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
+-->
       </tr>
     <% end %>
   </tbody>

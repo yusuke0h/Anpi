@@ -60,7 +60,7 @@ class DisastersController < ApplicationController
   def update
     respond_to do |format|
       if @disaster.update(disaster_params)
-        format.html { redirect_to @disaster, notice: 'Disaster was successfully updated.' }
+        format.html { redirect_to @disaster, notice: '災害情報を更新しました。' }
         format.json { render :show, status: :ok, location: @disaster }
       else
         format.html { render :edit }
@@ -74,7 +74,7 @@ class DisastersController < ApplicationController
   def destroy
     @disaster.destroy
     respond_to do |format|
-      format.html { redirect_to disasters_url, notice: 'Disaster was successfully destroyed.' }
+      format.html { redirect_to disasters_url, notice: '災害情報を削除しました。' }
       format.json { head :no_content }
     end
   end

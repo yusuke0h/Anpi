@@ -7,13 +7,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:contacted) %></th>
-      <th><%= model_class.human_attribute_name(:locate) %></th>
-      <th><%= model_class.human_attribute_name(:locate_desc) %></th>
-      <th><%= model_class.human_attribute_name(:safely) %></th>
-      <th><%= model_class.human_attribute_name(:safely_desc) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= model_class.human_attribute_name(:updated_at) %></th>
+      <th>安否情報登録有無</th>
+      <th>場所</th>
+      <th>場所-備考</th>
+      <th>安否</th>
+      <th>安否-備考</th>
+      <th>初期登録日時</th>
+      <th>最新登録日時</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +32,6 @@
 </table>
 
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to "戻る",
             disasters_path,
             :class => 'btn btn-default' %>
