@@ -20,7 +20,7 @@
         <td><%= disaster.description %></td>
         <td><%=l disaster.created_at %></td>
         <td>
-          <%= link_to '社員用安否確認', disaster_confirmations_index_for_user_path(disaster), :class => 'btn btn-success' %>
+<!--          <%= link_to '社員用安否確認', disaster_confirmations_index_for_user_path(disaster), :class => 'btn btn-success' %> -->
           <%= link_to '管理者用安否確認', disaster_confirmations_index_for_admin_path(disaster), :class => 'btn btn-success' %>
           <%= link_to "編集",
                       edit_disaster_path(disaster), :class => 'btn btn-default btn-xs' %>
