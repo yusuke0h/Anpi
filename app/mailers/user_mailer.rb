@@ -17,7 +17,8 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.send_mail.subject
   #
-  def send_mail user, conf_edit_url, user_conf_url
+  def send_mail disaster, user, conf_edit_url, user_conf_url
+    @disaster = disaster
     @user = user
     @conf_edit_url = conf_edit_url
     @user_conf_url = user_conf_url

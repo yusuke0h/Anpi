@@ -31,21 +31,7 @@ class DisastersController < ApplicationController
     respond_to do |format|
       if @disaster.save
         Confirmation.auto_create(@disaster.id)
-        User.all.each do |user|
-          encrypt_user_id = encrypt user.id
-          case Rails.env
-          when 'development'
-            server_name = request.server_name + ":3000"
-          else
-            server_name = request.server_name
-          end
-          conf_edit_url = server_name + disaster_confirmations_edit_path(@disaster) + "?user_id=" + encrypt_user_id
-          user_conf_url = server_name + disaster_confirmations_index_for_user_path(@disaster)
-
-          mail = UserMailer.send_mail user, conf_edit_url, user_conf_url
-          mail.transport_encoding = '8bit'
-          mail.deliver
-        end
+        @disaster.send_mail_to_unanswered_users
         format.html { redirect_to @disaster, notice: 'メールを送信しました' }
         format.json { render :show, status: :created, location: @disaster }
       else
