@@ -58,7 +58,7 @@ class Disaster < ActiveRecord::Base
   def send_mail_to_unanswered_users
     case Rails.env
     when 'development'
-      server_name = "localhost:3000"
+      server_name = "http://localhost:3000"
     else
       server_name = "https://anpi201412.herokuapp.com"
     end

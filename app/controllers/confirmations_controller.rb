@@ -1,6 +1,9 @@
 # encoding: utf-8
 
 class ConfirmationsController < ApplicationController
+  http_basic_authenticate_with name: 'admin', password: 'hogehoge', only: [:index_for_admin]
+  http_basic_authenticate_with name: 'user', password: 'hogehoge', only: [:index_for_user]
+
   def index_for_admin
     @disaster = disaster
     @confirmations = disaster.confirmations
