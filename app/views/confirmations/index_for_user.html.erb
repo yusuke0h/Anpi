@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>ユーザ名</th>
       <th>安否情報登録有無</th>
       <th>初期登録日時</th>
       <th>最新登録日時</th>
@@ -13,9 +14,16 @@
   <tbody>
     <% @confirmations.each do |confirmation| %>
       <tr>
-        <td><%= confirmation.contacted %></td>
-        <td><%= confirmation.created_at %></td>
-        <td><%= confirmation.updated_at %></td>
+        <td><%= confirmation.user.name %></td>
+        <td>
+          <% if confirmation.contacted %>
+            <p class='btn btn-success'>連絡済</p>
+          <% else %>
+            <p class='btn btn-danger'>未連絡</p>
+          <% end %>
+        </td>
+        <td><%= confirmation.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= confirmation.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
       </tr>
     <% end %>
   </tbody>
