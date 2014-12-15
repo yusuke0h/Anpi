@@ -1,5 +1,5 @@
 <p><%= @user.name %>　さん</p>
-<p>関東地方に震度6弱以上の地震が発生しました.</p>
+<%= @disaster.description.html_safe %>
 <p>社員の方は速やかに下記URLへアクセスし, 安否登録を行って下さい.</p>
 <%= link_to @conf_edit_url, @conf_edit_url %>
 <hr>
