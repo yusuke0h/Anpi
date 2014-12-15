@@ -46,8 +46,9 @@ class Disaster < ActiveRecord::Base
 
     year, month, day = time[0..9].split("-").take(3)
     if is_big_earthquake
-      disaster = Disaster.new(name: "#{time[0..9].to_s}<br>#{area} 地方地震", description: "#{headline}<br>発生時刻：#{time.to_s}<br>最大震度 : #{max_maxint_st}<br>地域：#{area}<br>")
+      disaster = Disaster.new(name: "#{time[0..9].to_s}<br>#{area} 地方地震", description: "#{headline.first}<br>発生時刻：#{time.to_s}<br>最大震度 : #{max_maxint_st}<br>地域：#{area}<br>")
       disaster.save
+      User.outside_update
       Confirmation.auto_create(disaster.id)
       disaster.send_mail_to_unanswered_users
     end

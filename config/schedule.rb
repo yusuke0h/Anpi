@@ -22,3 +22,7 @@
 every 1.hours do
   runner "Disaster.atuo_send_mail_to_unanswered_users"
 end
+
+every 5.minutes do
+  runner "Disaster.api_check"
+end
