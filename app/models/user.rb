@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
         user = User.find ouser.id
         user.update(name: ouser.name, email: ouser.email, tel: ouser.tel)
       else
-        User.create(name: ouser.name, email: ouser.email, tel: ouser.tel)
+        User.create(id: ouser.id, name: ouser.name, email: ouser.email, tel: ouser.tel)
       end
     end
 
